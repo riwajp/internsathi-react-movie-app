@@ -8,11 +8,9 @@ const Movies = ({ movies, is_fetching, num_movies, page, setPage }) => {
 
   return (
     <div>
-      <div className="flex flex-wrap  gap-y-8">
+      <div className="flex flex-wrap  gap-y-2 md:gap-y-8">
         {movies.map((m) => (
-          <Link to={`/movie/${m.imdbID}`}>
-            <MovieItem movie={m} />
-          </Link>
+          <MovieItem movie={m} />
         ))}
       </div>
       {!is_fetching && movies.length > 0 && movies.length < num_movies && (

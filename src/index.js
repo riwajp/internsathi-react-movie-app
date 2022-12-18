@@ -4,6 +4,7 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import * as ReactDOM from "react-dom";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import SearchResults from "./Components/SearchResults";
 import MovieDetails from "./Components/MovieDetails";
 
 const router = createBrowserRouter([
@@ -11,7 +12,8 @@ const router = createBrowserRouter([
     path: "/",
     element: <App />,
   },
-  { path: "/movie/:id", element: <MovieDetails /> },
+  { path: "/search/:search_term", element: <SearchResults /> },
+  { path: "/movie/:imdbID", element: <MovieDetails /> },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
