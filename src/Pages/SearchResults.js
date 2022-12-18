@@ -38,7 +38,9 @@ const SearchResults = () => {
         .then((res) => res.json())
         .then((res) => {
           if (res.Error == "Too many results.") {
-            setError(true);
+            setError(1);
+          } else if (res.Error == "Movie not found!") {
+            setError(2);
           } else {
             getMoviesDetails(res.Search);
             setNumMovies(res.totalResults);
@@ -68,10 +70,14 @@ const SearchResults = () => {
       </div>
 
       <div className=" mt-4 ">
-        {error ? (
+        {error == 1 ? (
           <div className="mx-auto text-gray-200 text-lg md:text-xl px-2">
             The search term has too many results. Please try to be more
             specific.
+          </div>
+        ) : error == 2 ? (
+          <div className="mx-auto text-gray-200 text-lg md:text-xl px-2">
+            No movie found.
           </div>
         ) : (
           <Movies
