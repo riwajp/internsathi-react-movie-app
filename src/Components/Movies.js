@@ -1,6 +1,7 @@
 import React from "react";
 import Loading from "./Loading";
 import MovieItem from "./MovieItem";
+import { Link } from "react-router-dom";
 
 const Movies = ({ movies, is_fetching, num_movies, page, setPage }) => {
   console.log(movies);
@@ -9,7 +10,9 @@ const Movies = ({ movies, is_fetching, num_movies, page, setPage }) => {
     <div>
       <div className="flex flex-wrap  gap-y-8">
         {movies.map((m) => (
-          <MovieItem movie={m} />
+          <Link to={`/movie/${m.imdbID}`}>
+            <MovieItem movie={m} />
+          </Link>
         ))}
       </div>
       {!is_fetching && movies.length > 0 && movies.length < num_movies && (

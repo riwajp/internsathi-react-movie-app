@@ -69,8 +69,6 @@ function App() {
           page={page}
           setPage={setPage}
         />
-
-        <MovieDetails />
       </div>
     </div>
   );
