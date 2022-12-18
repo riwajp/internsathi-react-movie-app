@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 
+body{
+  background-color: rgb(52, 52, 52);;
+}
 
 .searchbar-container{
   width:600px;
