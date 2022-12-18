@@ -1,22 +1,17 @@
 import React, { useEffect, useState } from "react";
-import { SearchBar } from "./SearchBar";
-import SearchResults from "./SearchResults";
-const Search = () => {
-  const [search_term, setSearchTerm] = useState("");
-  const [show_results, setShowResults] = useState(false);
-
-  useEffect(() => {
-    if (search_term != "") {
-      setShowResults(true);
-    } else {
-      setShowResults(false);
-    }
-  }, [search_term]);
+const Search = ({ setSearchTerm }) => {
+  const [search_term_temp, setSearchTermTemp] = useState("");
 
   return (
     <div className="search">
-      <SearchBar search_term={search_term} setSearchTerm={setSearchTerm} />
-      {show_results && <SearchResults search_term={search_term} />}
+      <div className="searchbar-container mx-auto flex-">
+        <input
+          value={search_term_temp}
+          onChange={(e) => setSearchTermTemp(e.target.value)}
+          className="searchbar border-black border-2"
+        />
+        <button onClick={() => setSearchTerm(search_term_temp)}>Search</button>
+      </div>
     </div>
   );
 };

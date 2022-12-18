@@ -21,3 +21,28 @@ body{
   
 
 }
+
+.movie-description{
+  height:0;
+  min-height: 0;
+  
+  overflow: hidden;
+  background-color:black;
+  position:absolute;
+
+  
+}
+
+.movie:hover  .movie-description{
+ 
+
+  width:200px;
+
+  min-height:100px;
+  transition:  min-height 0.2s ;
+
+
+  
+
+
+}
