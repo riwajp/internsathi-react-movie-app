@@ -1,7 +1,6 @@
 import React from "react";
 import Loading from "./Loading";
 import MovieItem from "./MovieItem";
-import { Link } from "react-router-dom";
 
 const Movies = ({ movies, is_fetching, num_movies, page, setPage }) => {
   console.log(movies);

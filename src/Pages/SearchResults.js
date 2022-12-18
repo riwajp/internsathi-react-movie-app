@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import Header from "./Header";
-import Movies from "./Movies";
+import Header from "../Components/Header";
+import Movies from "../Components/Movies";
 
 const SearchResults = () => {
   const { search_term } = useParams();
@@ -21,7 +21,6 @@ const SearchResults = () => {
         );
         response = await response.json();
         movies_temp.push(response);
-        console.log("done");
       }
       if (page == 1) {
         setMovies(movies_temp);

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import Loading from "./Loading";
-import Header from "./Header";
+import Loading from "../Components/Loading";
+import Header from "../Components/Header";
 
 const MovieDetails = () => {
   let { imdbID } = useParams();
@@ -19,7 +19,7 @@ const MovieDetails = () => {
     <div>
       <Header />
       {movie ? (
-        <div className="mt-8 px-8 flex flex-wrap gap-x-6 mb-8">
+        <div className="mt-8 px-8 flex flex-wrap md:flex-nowrap gap-x-6 mb-8">
           <div className="">
             <img src={movie.Poster} />
           </div>
